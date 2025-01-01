@@ -20,6 +20,9 @@
             padding-bottom: 10px;
             font-weight: bold;
         }
+        .table-container tr{
+            background-color: #4CAF50;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,6 +46,32 @@
     </style>
 </head>
 <body>
+    <script>
+        function createTenxTenTable(){
+            const tableContainer=document.querySelector('.table-container');
+            console.log(tableContainer);
+            
+           
+
+
+            for(let i=0;i<10;i++){
+                const row=document.createElement('tr');
+                row.className='row';
+                row.textContent=i;
+                tableContainer.appendChild(row);
+                for(let j=0;j<10;j++){
+                    const column =document.createElement('td');
+                    column.className='column';
+                    column.textContent=j;
+                    row.appendChild(column);
+                }
+            }
+           
+            
+
+        }
+    window.onload=createTenxTenTable;
+    </script>
     <div class="grid-container">
         <div class="table-container">
             <table>
@@ -63,6 +92,7 @@
                 <tr>
                     <th>Header 1</th>
                     <th>Header 2</th>
+                    
                 </tr>
                 <tr>
                     <td>Data 1</td>
