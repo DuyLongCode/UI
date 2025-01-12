@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .color-option {
+                background-color: var(--color);
+                color: white;
+            }
+            #selectItem {
+                padding: 5px;
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <select id="selectItem">
+            <option value="red" class="color-option" style="--color: red">
+                Red
+            </option>
+            <option value="blue" class="color-option" style="--color: blue">
+                Blue
+            </option>
+            <option value="green" class="color-option" style="--color: green">
+                Green
+            </option>
+        </select>
+
+        <div id="colorDisplay"></div>
+
+        <script>
+            var selectItem = document.getElementById("selectItem");
+            var colorDisplay = document.getElementById("colorDisplay");
+
+            selectItem.addEventListener('change', function() {
+                const selectedColor = this.value;
+                colorDisplay.style.backgroundColor = selectedColor;
+                colorDisplay.style.width = "100px";
+                colorDisplay.style.height = "100px";
+                colorDisplay.style.marginTop = "10px";
+            });
+            
+            // Initial color set
+            colorDisplay.style.backgroundColor = selectItem.value;
+            colorDisplay.style.width = "100px";
+            colorDisplay.style.height = "100px";
+            colorDisplay.style.marginTop = "10px";
+        </script>
+    </body>
+</html>
